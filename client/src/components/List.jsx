@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import ListSection from './ListSection.jsx'
 
-class List extends Component {
+export class List extends Component {
   constructor(props) {
     super(props);
     this.state = {};

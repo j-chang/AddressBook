@@ -6,8 +6,6 @@ A demo address book project. Search and sort your contacts using this app.
 
 ### Clone the repo
 
-Clone the github repo
-
 ```sh
 git clone https://github.com/j-chang/AddressBook.git
 ```
@@ -36,4 +34,14 @@ or from within the root directory:
 
 ```sh
 open ./client/public/index.html
+```
+
+## Testing
+
+### Run Jest Tests
+
+From within the root directory:
+
+```sh
+npm test
 ```

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { entryClick } from '../actions/actions.js'
 
-class ContactEntry extends Component {
+export class ContactEntry extends Component {
   constructor(props) {
     super(props);
     this.state = {};

@@ -37,7 +37,7 @@ const queryContacts = ( contacts, query ) => {
 
 };
 
-class Nav extends Component {
+export class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {};

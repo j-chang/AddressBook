@@ -4,7 +4,7 @@
   "description": "Address book app demo",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest tests",
     "dev": "./node_modules/.bin/webpack -d --watch"
   },
   "repository": {
@@ -30,5 +30,11 @@
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "webpack": "^2.6.1"
+  },
+  "devDependencies": {
+    "babel-jest": "^20.0.3",
+    "enzyme": "^2.8.2",
+    "jest": "^20.0.4",
+    "react-test-renderer": "^15.5.4"
   }
 }

@@ -18,7 +18,7 @@ const boxStyle = {
   border: '0'
 };
 
-class ListSection extends Component {
+export class ListSection extends Component {
   constructor(props) {
     super(props);
     this.state = {};
