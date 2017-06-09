@@ -1,6 +1,9 @@
 export const FETCHING_CONTACTS = 'FETCHING_CONTACTS';
 export const RECEIVED_CONTACTS = 'RECEIVED_CONTACTS';
 export const CHANGE_FILTER = 'CHANGE_FILTER';
+export const SEARCH_QUERY_CHANGE = 'SEARCH_QUERY_CHANGE';
+export const OVERLAY_CLICK = 'OVERLAY_CLICK';
+export const ENTRY_CLICK = 'ENTRY_CLICK';
 
 const fetchingContacts = () => (
   {
@@ -70,10 +73,31 @@ const alphabetizeContacts = (contacts, filter='last') => {
 };
 
 
-export const changeFilter = (filter) => (
+export const changeFilter = filter => (
   {
     type: CHANGE_FILTER,
     filter
   }
 );
 
+export const searchQueryChange = (query, queriedLast, queriedFirst) => (
+  {
+    type: SEARCH_QUERY_CHANGE,
+    query,
+    queriedLast,
+    queriedFirst
+  }
+);
+
+export const closeOverlay = () => (
+  {
+    type: OVERLAY_CLICK
+  }
+);
+
+export const entryClick = contact => (
+  {
+    type: ENTRY_CLICK,
+    contact
+  }
+);
