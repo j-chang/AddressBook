@@ -1,7 +1,10 @@
 import { RECEIVED_CONTACTS, FETCHING_CONTACTS } from '../actions/actions.js'
 
 const initialState = {
-  contacts: [],
+  contacts: {
+    last: [],
+    first: []
+  },
   isFetching: false
 };
 

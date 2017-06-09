@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { changeFilter } from '../actions/actions.js'
 
 const menuStyle = {
   backgroundColor: '#0C0F0F',
@@ -24,10 +26,16 @@ const iconStyle = {
 class Nav extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      search: '',
-      filter: 'last'
-    };
+    this.state = {};
+
+    this.onFilterClick = this.onFilterClick.bind(this);
+  }
+
+  onFilterClick(filter) {
+    if (filter === this.props.filter) {
+      return;
+    }
+    this.props.dispatch(changeFilter(filter));
   }
 
   render() {
@@ -56,16 +64,20 @@ class Nav extends Component {
         </div>
         <div className='item'>
           <div className='ui list'>
-            <div className='item'>
-              <i className='selected radio icon' style={iconStyle}/>
+            <div className='item' onClick={() => { this.onFilterClick('last') }}>
+              <i className={this.props.filter === 'last' ? 'selected radio icon' : 'radio icon'}
+                style={iconStyle}
+              />
               <div className='content'>
                 <span style={labelStyle}>
                   Last Name
                 </span>
               </div>
             </div>
-            <div className='item'>
-              <i className='radio icon' style={iconStyle}/>
+            <div className='item' onClick={() => { this.onFilterClick('first') }}>
+              <i className={this.props.filter === 'first' ? 'selected radio icon' : 'radio icon'}
+                style={iconStyle}
+              />
               <div className='content'>
                 <span style={labelStyle}>
                   First Name
@@ -79,4 +91,11 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+const mapStateToProps = state => (
+  {
+    filter: state.search.filter,
+    query: state.search.query
+  }
+);
+
+export default connect(mapStateToProps)(Nav);
